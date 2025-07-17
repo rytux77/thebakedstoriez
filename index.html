@@ -12,6 +12,7 @@
       overflow: hidden;
     }
 
+    /* Loader */
     #loader {
       position: fixed;
       top: 0; left: 0;
@@ -36,6 +37,7 @@
       to { transform: rotate(360deg); }
     }
 
+    /* Navigation */
     .top-panel {
       position: fixed;
       top: 0;
@@ -64,6 +66,7 @@
       color: #d2691e;
     }
 
+    /* Content Sections */
     .container {
       padding: 100px 20px 40px;
       display: flex;
@@ -98,6 +101,7 @@
       color: #333;
     }
 
+    /* Form Styling */
     form {
       display: flex;
       flex-direction: column;
@@ -153,26 +157,26 @@
     <a onclick="showSection('custom')">Custom Cakes</a>
   </div>
 
-  <!-- Content -->
+  <!-- Main Content -->
   <div class="container">
     <div class="side-heading">Baked Stories</div>
 
-    <!-- Home Section -->
+    <!-- Home Page -->
     <div id="home" class="section">
       <p>
         Here in BakedStories you can find available cakes and desserts you want.<br>
         <strong>Limited Deliveries!</strong><br>
-        Deliveries to all places will be available soon!!.
+        Deliveries to all places will be available soon!!
       </p>
     </div>
 
-    <!-- Cakes Section -->
+    <!-- Cakes Page -->
     <div id="cakes" class="section" style="display:none;">
       <h2>Cakes</h2>
       <p>No cakes listed yet. Stay tuned!</p>
     </div>
 
-    <!-- Deserts Section -->
+    <!-- Deserts Page -->
     <div id="deserts" class="section" style="display:none;">
       <h2>Cream Donut</h2>
       <blockquote class="instagram-media"
@@ -181,7 +185,7 @@
       </blockquote>
     </div>
 
-    <!-- Custom Cakes Section -->
+    <!-- Custom Cakes Page -->
     <div id="custom" class="section" style="display:none;">
       <h2>Request Your Own Custom Cake</h2>
       <form action="https://formsubmit.co/rayyanpro44@gmail.com" method="POST">
@@ -193,7 +197,7 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
       </form>
-      <div class="note">Note: This form only works if opened via a web server (like Live Server).</div>
+      <div class="note">Note: FormSubmit only works when viewed via a web server (not local file).</div>
 
       <h2>Example: Spidey Cake</h2>
       <blockquote class="instagram-media"
@@ -206,7 +210,7 @@
   <!-- Instagram Script -->
   <script async src="https://www.instagram.com/embed.js"></script>
 
-  <!-- JavaScript -->
+  <!-- Page Switching & Loader -->
   <script>
     window.addEventListener("load", () => {
       const loader = document.getElementById("loader");
