@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Baked Stories</title>
   <style>
     body, html {
@@ -12,11 +12,12 @@
       overflow: hidden;
     }
 
-    /* Loader */
     #loader {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(255,239,213,0.9);
       display: flex;
       align-items: center;
@@ -26,7 +27,8 @@
     }
 
     .spinner {
-      width: 50px; height: 50px;
+      width: 50px;
+      height: 50px;
       border: 6px solid #deb887;
       border-top: 6px solid #d2691e;
       border-radius: 50%;
@@ -34,10 +36,11 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
-    /* Navigation */
     .top-panel {
       position: fixed;
       top: 0;
@@ -66,7 +69,6 @@
       color: #d2691e;
     }
 
-    /* Content Sections */
     .container {
       padding: 100px 20px 40px;
       display: flex;
@@ -101,7 +103,6 @@
       color: #333;
     }
 
-    /* Form Styling */
     form {
       display: flex;
       flex-direction: column;
@@ -161,22 +162,22 @@
   <div class="container">
     <div class="side-heading">Baked Stories</div>
 
-    <!-- Home Page -->
+    <!-- Home Section -->
     <div id="home" class="section">
       <p>
-        Here in BakedStories you can find available cakes and desserts you want.<br>
-        <strong>Limited Deliveries!</strong><br>
+        Here in BakedStories you can find available cakes and desserts you want.<br />
+        <strong>Limited Deliveries!</strong><br />
         Deliveries to all places will be available soon!!
       </p>
     </div>
 
-    <!-- Cakes Page -->
+    <!-- Cakes Section -->
     <div id="cakes" class="section" style="display:none;">
       <h2>Cakes</h2>
       <p>No cakes listed yet. Stay tuned!</p>
     </div>
 
-    <!-- Deserts Page -->
+    <!-- Deserts Section -->
     <div id="deserts" class="section" style="display:none;">
       <h2>Cream Donut</h2>
       <blockquote class="instagram-media"
@@ -185,19 +186,24 @@
       </blockquote>
     </div>
 
-    <!-- Custom Cakes Page -->
+    <!-- Custom Cakes Section -->
     <div id="custom" class="section" style="display:none;">
       <h2>Request Your Own Custom Cake</h2>
       <form action="https://formsubmit.co/rayyanpro44@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email (optional)">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email (optional)" />
         <textarea name="message" placeholder="Describe your custom cake idea..." required></textarea>
         <button type="submit">Send Request</button>
-        <input type="hidden" name="_subject" value="New Custom Cake Request from Baked Stories">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+
+        <!-- FormSubmit Extras -->
+        <input type="hidden" name="_subject" value="New Custom Cake Request from Baked Stories" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://rytux77.github.io/thebakedstoriez/" />
       </form>
-      <div class="note">Note: FormSubmit only works when viewed via a web server (not local file).</div>
+      <div class="note">
+        You'll be redirected after submission to <code>https://rytux77.github.io/thebakedstoriez/</code>
+      </div>
 
       <h2>Example: Spidey Cake</h2>
       <blockquote class="instagram-media"
