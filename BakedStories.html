@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Baked Stories</title>
+  <style>
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,239,213,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    .spinner {
+      width: 50px; height: 50px;
+      border: 6px solid #deb887;
+      border-top: 6px solid #d2691e;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .top-panel {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(255,239,213,0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      border-bottom: 1px solid #deb887;
+      z-index: 10;
+    }
+
+    .top-panel a {
+      text-decoration: none;
+      color: #8b4513;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .top-panel a:hover {
+      color: #d2691e;
+    }
+
+    .container {
+      padding: 100px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: auto;
+      min-height: 100vh;
+    }
+
+    .side-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: #8b4513;
+      margin-bottom: 15px;
+      align-self: flex-start;
+    }
+
+    .section {
+      max-width: 800px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .section h2 {
+      color: #d2691e;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 17px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #deb887;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #d2691e;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8b4513;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    blockquote.instagram-media {
+      max-width: 320px !important;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader"><div class="spinner"></div></div>
+
+  <!-- Navigation -->
+  <div class="top-panel">
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('cakes')">Cakes</a>
+    <a onclick="showSection('deserts')">Deserts</a>
+    <a onclick="showSection('custom')">Custom Cakes</a>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="side-heading">Baked Stories</div>
+
+    <!-- Home Section -->
+    <div id="home" class="section">
+      <p>
+        Here in BakedStories you can find available cakes and desserts you want.<br>
+        <strong>Limited Deliveries!</strong><br>
+        Deliveries to all places will be available soon!!.
+      </p>
+    </div>
+
+    <!-- Cakes Section -->
+    <div id="cakes" class="section" style="display:none;">
+      <h2>Cakes</h2>
+      <p>No cakes listed yet. Stay tuned!</p>
+    </div>
+
+    <!-- Deserts Section -->
+    <div id="deserts" class="section" style="display:none;">
+      <h2>Cream Donut</h2>
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DK878L-S1dk/?utm_source=ig_embed&utm_campaign=loading"
+        data-instgrm-version="14">
+      </blockquote>
+    </div>
+
+    <!-- Custom Cakes Section -->
+    <div id="custom" class="section" style="display:none;">
+      <h2>Request Your Own Custom Cake</h2>
+      <form action="https://formsubmit.co/rayyanpro44@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email (optional)">
+        <textarea name="message" placeholder="Describe your custom cake idea..." required></textarea>
+        <button type="submit">Send Request</button>
+        <input type="hidden" name="_subject" value="New Custom Cake Request from Baked Stories">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+      </form>
+      <div class="note">Note: This form only works if opened via a web server (like Live Server).</div>
+
+      <h2>Example: Spidey Cake</h2>
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DBjmyODIeLR/?utm_source=ig_embed&utm_campaign=loading"
+        data-instgrm-version="14">
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- Instagram Script -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+        document.body.style.overflow = "auto";
+        showSection("home");
+      }, 1000);
+    });
+
+    function showSection(id) {
+      ['home', 'cakes', 'deserts', 'custom'].forEach(sec => {
+        document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
