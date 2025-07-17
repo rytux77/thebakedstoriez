@@ -12,11 +12,12 @@
       overflow: hidden;
     }
 
-    /* Loader */
     #loader {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(255,239,213,0.9);
       display: flex;
       align-items: center;
@@ -26,7 +27,8 @@
     }
 
     .spinner {
-      width: 50px; height: 50px;
+      width: 50px;
+      height: 50px;
       border: 6px solid #deb887;
       border-top: 6px solid #d2691e;
       border-radius: 50%;
@@ -34,10 +36,11 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
-    /* Navigation */
     .top-panel {
       position: fixed;
       top: 0;
@@ -129,17 +132,17 @@
       background-color: #8b4513;
     }
 
+    .note {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+
     blockquote.instagram-media {
       max-width: 320px !important;
       margin: 20px auto;
       border-radius: 10px;
       box-shadow: 0 0 4px rgba(0,0,0,0.2);
-    }
-
-    .note {
-      font-size: 14px;
-      color: #888;
-      margin-top: 10px;
     }
   </style>
 </head>
@@ -191,14 +194,18 @@
         <input type="email" name="email" placeholder="Your email (optional)" />
         <textarea name="message" placeholder="Describe your custom cake idea..." required></textarea>
         <button type="submit">Send Request</button>
+
+        <!-- FormSubmit Extras -->
         <input type="hidden" name="_subject" value="New Custom Cake Request from Baked Stories" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://rytux77.github.io/thebakedstoriez/thanks.html" />
+        <input type="hidden" name="_next" value="https://rytux77.github.io/thebakedstoriez/" />
       </form>
-      <div class="note">You'll be redirected to a thank-you page after submission.</div>
+      <div class="note">
+        You'll be redirected after submission to <code>https://rytux77.github.io/thebakedstoriez/</code>
+      </div>
 
-      <h2>Spidey Cake</h2>
+      <h2>Example: Spidey Cake</h2>
       <blockquote class="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/p/DBjmyODIeLR/?utm_source=ig_embed&utm_campaign=loading"
         data-instgrm-version="14">
